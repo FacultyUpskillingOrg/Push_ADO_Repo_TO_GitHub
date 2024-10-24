@@ -1,0 +1,23 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+jobs:
+- job: PushToGitHub
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - checkout: self
+  - script: |
+      git config --global user.email "you@example.com"
+      git config --global user.name "Your Name"
+      git remote add github https://github.com/yourusername/yourrepo.git
+      git add .
+      git commit -m "Automated update from Azure DevOps"
+      git push github main  # or your target branch
+  env:
+    GITHUB_TOKEN: $(GitHubToken)
