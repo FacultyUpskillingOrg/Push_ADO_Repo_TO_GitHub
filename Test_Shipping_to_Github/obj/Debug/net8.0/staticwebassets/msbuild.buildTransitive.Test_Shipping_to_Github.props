@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Test_Shipping_to_Github.props" />
+</Project>

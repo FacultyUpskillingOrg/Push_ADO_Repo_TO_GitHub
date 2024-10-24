@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\v-daisarusey\\source\\repos\\Test_Shipping_to_Github\\Test_Shipping_to_Github\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Test_Shipping_to_Github.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Test_Shipping_to_Github.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\v-daisarusey\\source\\repos\\Test_Shipping_to_Github\\Test_Shipping_to_Github\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\v-daisarusey\\source\\repos\\Test_Shipping_to_Github\\Test_Shipping_to_Github\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\v-daisarusey\\source\\repos\\Test_Shipping_to_Github\\Test_Shipping_to_Github\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\v-daisarusey\\source\\repos\\Test_Shipping_to_Github\\Test_Shipping_to_Github\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Test_Shipping_to_Github.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Test_Shipping_to_Github.props",
+      "PackagePath": "build\\Test_Shipping_to_Github.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Test_Shipping_to_Github.props",
+      "PackagePath": "buildMultiTargeting\\Test_Shipping_to_Github.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Test_Shipping_to_Github.props",
+      "PackagePath": "buildTransitive\\Test_Shipping_to_Github.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
