@@ -15,9 +15,8 @@ steps:
     - script: |
         git config --global user.email "daisyarusey.dc@gmail.com"
         git config --global user.name "Daisy Arusey"
-        git remote add github https://github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
-        git add .
-        git commit -m "Automated update from Azure DevOps"
-        git push github main  # or your target branch
+        git remote add origin https://github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
+        git branch -M main
+        git push -u origin main
       env:
         GITHUB_TOKEN: $(GitHubToken)
