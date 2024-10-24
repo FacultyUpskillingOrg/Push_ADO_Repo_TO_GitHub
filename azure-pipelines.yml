@@ -6,17 +6,19 @@
 trigger:
   branches:
     include:
-    - master
+      - master  # This triggers the pipeline on changes to the main branch
+
 pool:
-      vmImage: 'ubuntu-latest'
-  
+  vmImage: 'ubuntu-latest'
+
 steps:
-    - checkout: self
-    - script: |
-        git config --global user.email "daisyarusey.dc@gmail.com"
-        git config --global user.name "Daisy Arusey"
-        git remote add origin https://github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
-        git branch -M main
-        git push -u origin main
-      env:
-        GITHUB_TOKEN: $(GitHubToken)
+
+# Checkout the ADO repo
+- checkout: self
+
+# Set up GitHub remote
+- script: |
+    git remote add github https://AruseyDaisy:$(GITHUBTOKEN)@github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
+    git push github --mirror
+  displayName: 'Push to GitHub' 
+
