@@ -14,6 +14,7 @@ jobs:
   displayName: Export to GitHub
   steps:
     - checkout: self  # Check out the Azure DevOps repository
+      persistCredentials: true
 
     - script: |
         git fetch --all
