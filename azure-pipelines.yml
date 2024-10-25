@@ -34,6 +34,9 @@ jobs:
 
     - script: |
         git remote add github https://$(GITHUB_TOKEN)@github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
+        git config http.postBuffer 524288000  # Set to 500MB
+        git config pack.windowMemory "100m"
+        git config pack.packSizeLimit "100m"
         git push -u github master:main
       env:
         GITHUB_TOKEN: $(GITHUB_TOKEN)
