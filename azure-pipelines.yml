@@ -14,6 +14,8 @@ jobs:
   pool:
     vmImage: 'ubuntu-latest'
   steps:
+  - checkout: self
+    persistCredentials: true
   - script: |
       git clone --mirror https://DaisyOrg@dev.azure.com/DaisyOrg/Test%20Projects/_git/Test_Shipping_to_Github
       cd Test_Shipping_to_Github.git
