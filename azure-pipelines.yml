@@ -23,7 +23,7 @@ jobs:
 
     - script: |
         git remote add github https://$(GITHUB_TOKEN)@github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
-        git push -u github --all
+        git push -u github master
       env:
         GITHUB_TOKEN: $(GITHUB_TOKEN)
       displayName: "Push to GitHub"
