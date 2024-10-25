@@ -20,6 +20,11 @@ jobs:
         git fetch --all
         git checkout master
       displayName: "Fetch all branches and checkout master"
+    
+    # Verify repository integrity
+    - script: |
+        git fsck --full
+      displayName: "Check repository integrity"
 
     # Set up Git to authenticate with GitHub
     - script: |
