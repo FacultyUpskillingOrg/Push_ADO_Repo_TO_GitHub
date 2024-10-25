@@ -10,15 +10,26 @@ trigger:
 
 
 jobs:
-- job: ImportToGitHub
-  pool:
-    vmImage: 'ubuntu-latest'
+- job: ExportToGitHub
+  displayName: Export to GitHub
   steps:
-  - checkout: self
-    persistCredentials: true
-  - script: |
-      git clone --mirror https://DaisyOrg@dev.azure.com/DaisyOrg/Test%20Projects/_git/Test_Shipping_to_Github
-      cd Test_Shipping_to_Github.git
-      git remote add github https://github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
-      git push --mirror github
-    displayName: 'Import ADO Repo to GitHub'
+    - checkout: self  # Check out the Azure DevOps repository
+      persistCredentials: true
+
+    - script: |
+        git fetch --all
+        git checkout master
+      displayName: "Fetch all branches and checkout master"
+
+    # Set up Git to authenticate with GitHub
+    - script: |
+        git config --global user.email "daisyarusey.dc@gmail.com"
+        git config --global user.name "AruseyDaisy"
+      displayName: "Configure Git"
+
+    - script: |
+        git remote add github https://$(GITHUB_TOKEN)@github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
+        git push -u github master:main
+      env:
+        GITHUB_TOKEN: $(GITHUB_TOKEN)
+      displayName: "Push to GitHub"
