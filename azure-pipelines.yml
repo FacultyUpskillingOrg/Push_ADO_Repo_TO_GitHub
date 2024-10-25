@@ -29,7 +29,6 @@ jobs:
 
     - script: |
         git clone https://DaisyOrg@dev.azure.com/DaisyOrg/Test%20Projects/_git/Test_Shipping_to_Github
-        cd Test_Shipping_to_Github
         
       env:
         GITHUB_TOKEN: $(GITHUB_TOKEN)
