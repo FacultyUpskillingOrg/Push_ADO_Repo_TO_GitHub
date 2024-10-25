@@ -28,7 +28,8 @@ jobs:
       displayName: "Configure Git"
 
     - script: |
-        git clone https://DaisyOrg@dev.azure.com/DaisyOrg/Test%20Projects/_git/Test_Shipping_to_Github
+        git remote add github https://$(GITHUB_TOKEN)@github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
+        git push -u github master:main
         
       env:
         GITHUB_TOKEN: $(GITHUB_TOKEN)
