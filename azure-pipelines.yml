@@ -17,8 +17,8 @@ jobs:
 
     # Set up Git to authenticate with GitHub
     - script: |
-        git config --global user.email "your-email@example.com"
-        git config --global user.name "your-github-username"
+        git config --global user.email "daisyarusey.dc@gmail.com"
+        git config --global user.name "AruseyDaisy"
       displayName: "Configure Git"
 
     - script: |
