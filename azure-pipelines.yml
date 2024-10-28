@@ -17,9 +17,13 @@ jobs:
       persistCredentials: true
 
     - script: |
-        git fetch --all
+        git init
+        git remote add origin https://$(System.AccessToken)@dev.azure.com/DaisyOrg/Test_Shipping_to_Github/_git/your-repo-name
+        git fetch --depth=1 origin master
         git checkout master
-      displayName: "Fetch all branches and checkout master"
+      env:
+        System.AccessToken: $(System.AccessToken)
+      displayName: "Shallow clone master branch from Azure DevOps"
 
     # Set up Git to authenticate with GitHub
     - script: |
@@ -29,7 +33,7 @@ jobs:
 
     - script: |
         git remote add github https://$(GITHUB_TOKEN)@github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
-        git push -u github master:main
+        git push -f github master:main
         
       env:
         GITHUB_TOKEN: $(GITHUB_TOKEN)
