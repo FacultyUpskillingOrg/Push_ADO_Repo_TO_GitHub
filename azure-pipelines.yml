@@ -17,7 +17,7 @@ jobs:
 
     - script: |
         git init
-        git remote add origin https://$(System.AccessToken)@dev.azure.com/DaisyOrg/Test_Shipping_to_Github/_git/your-repo-name
+        git remote add origin https://$(System.AccessToken)@dev.azure.com/DaisyOrg/Test%20Projects/_git/Test_Shipping_to_Github
         git fetch --depth=1 origin master
         git checkout master
       env:
