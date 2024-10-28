@@ -6,34 +6,27 @@
 trigger:
   branches:
     include:
-      - master  # This triggers the pipeline on changes to the main branch
-
+      - master  # Trigger pipeline on master branch
 
 jobs:
 - job: ExportToGitHub
   displayName: Export to GitHub
   steps:
-    - checkout: none
+    - checkout: none  # Skip default checkout to avoid full history
 
+    # Mirror clone the Azure DevOps repository
     - script: |
-        git init
-        git remote add origin https://$(System.AccessToken)@dev.azure.com/DaisyOrg/Test%20Projects/_git/Test_Shipping_to_Github
-        git fetch --depth=1 origin master
-        git checkout master
+        git clone --mirror https://$(System.AccessToken)@dev.azure.com/DaisyOrg/Test%20Projects/_git/Test_Shipping_to_Github repo-mirror
+        cd repo-mirror
       env:
         System.AccessToken: $(System.AccessToken)
-      displayName: "Shallow clone master branch from Azure DevOps"
+      displayName: "Mirror clone from Azure DevOps"
 
     # Set up Git to authenticate with GitHub
     - script: |
-        git config --global user.email "daisyarusey.dc@gmail.com"
-        git config --global user.name "AruseyDaisy"
-      displayName: "Configure Git"
-
-    - script: |
-        git remote add github https://$(GITHUB_TOKEN)@github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
-        git push -f github master:main
-        
+        cd repo-mirror
+        git remote set-url --push origin https://$(GITHUB_TOKEN)@github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
+        git push --mirror
       env:
         GITHUB_TOKEN: $(GITHUB_TOKEN)
-      displayName: "Push to GitHub"
+      displayName: "Push mirror to GitHub"
