@@ -13,8 +13,7 @@ jobs:
 - job: ExportToGitHub
   displayName: Export to GitHub
   steps:
-    - checkout: self  # Check out the Azure DevOps repository
-      persistCredentials: true
+    - checkout: none
 
     - script: |
         git init
