@@ -25,7 +25,7 @@ jobs:
     # Set up Git to authenticate with GitHub
     - script: |
         cd repo-mirror
-        git remote set-url --push origin https://$(GITHUB_TOKEN)@github.com/AruseyDaisy/Test_Shipping_From_AzureADO_to_GitHub.git
+        git remote set-url --push origin https://$(GITHUB_TOKEN)@github.com/FacultyUpskillingOrg/Push_ADO_Repo_TO_GitHub.git
         git push --mirror
       env:
         GITHUB_TOKEN: $(GITHUB_TOKEN)
