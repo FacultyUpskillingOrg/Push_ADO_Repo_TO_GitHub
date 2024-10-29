@@ -6,13 +6,13 @@
 trigger:
   branches:
     include:
-      - master  # Trigger pipeline on master branch
+      - master
 
 jobs:
 - job: ExportToGitHub
   displayName: Export to GitHub
   steps:
-    - checkout: none  # Skip default checkout to avoid full history
+    - checkout: none
 
     # Mirror clone the Azure DevOps repository
     - script: |
@@ -25,7 +25,7 @@ jobs:
     # Set up Git to authenticate with GitHub
     - script: |
         cd repo-mirror
-        git remote set-url --push origin https://$(GITHUB_TOKEN)@github.com/FacultyUpskillingOrg/Push_ADO_Repo_TO_GitHub.git
+        git remote set-url --push origin https://AruseyDaisy:$(GITHUB_TOKEN)@github.com/FacultyUpskillingOrg/Push_ADO_Repo_TO_GitHub.git
         git push --mirror
       env:
         GITHUB_TOKEN: $(GITHUB_TOKEN)
