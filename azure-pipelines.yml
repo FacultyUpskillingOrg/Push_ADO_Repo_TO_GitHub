@@ -27,7 +27,7 @@ jobs:
           $githubDir = $stageDir +"\"+"gitHub"
           $destination = $githubDir +"\"+"Test_Shipping_to_Github.git"
           #please provide your username
-          $alias = 'AruseyDaisy:'+ "$(Github.PAT)"
+          $alias = 'AruseyDaisy:'+ "$(GITHUB_TOKEN)"
           #Please make sure, you remove https from azure-repo-clone-url
           $sourceURL = 'https://$(System.AccessToken)@DaisyOrg@dev.azure.com/DaisyOrg/Test%20Projects/_git/Test_Shipping_to_Github'
           #Please make sure, you remove https from github-repo-clone-url
