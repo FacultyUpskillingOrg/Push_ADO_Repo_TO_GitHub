@@ -29,7 +29,7 @@ jobs:
           #please provide your username
           $alias = 'AruseyDaisy:'+ "$(GITHUB_TOKEN)"
           #Please make sure, you remove https from azure-repo-clone-url
-          $sourceURL = 'https://$(System.AccessToken)@DaisyOrg@dev.azure.com/DaisyOrg/Test%20Projects/_git/Test_Shipping_to_Github'
+          $sourceURL = 'https://$(System.AccessToken)@dev.azure.com/DaisyOrg/Test%20Projects/_git/Test_Shipping_to_Github'
           #Please make sure, you remove https from github-repo-clone-url
           $destURL = 'https://' + $alias + '@github.com/FacultyUpskillingOrg/Push_ADO_Repo_TO_GitHub.git'
           #Check if the parent directory exists and delete
